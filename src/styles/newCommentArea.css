@@ -1,0 +1,7 @@
+.newCommentAreaContainer {
+    max-width: 300px;
+    max-height: 700px;
+    overflow: auto;
+    position: sticky;
+    top: 60px;
+}

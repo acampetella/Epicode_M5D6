@@ -14,12 +14,8 @@ function Main({term}) {
   const [error, setError] = useState('')
   const [selected, setSelected] = useState('')
   const filterBooks = () => {
-    if (term !== '') {
-      setBooksList(totalBooksList.filter((book) => 
+    setBooksList(totalBooksList.filter((book) => 
       book.title.toLowerCase().includes(term.toLowerCase())))
-    } else {
-      setBooksList(totalBooksList)
-    }
   }
   const getBooks = async () => {
     setLoading(true)
@@ -37,7 +33,7 @@ function Main({term}) {
   }
 
   useEffect(() => {
-    if (term === '') {
+    if (totalBooksList.length === 0) {
       getBooks()
     } else {
       filterBooks()
